@@ -6,6 +6,32 @@ import o from "../../assests/opensea.png"
 
 
 const Navbar = ({ connectedAccount, setConnectedAccount }) => {
+   function connectWallet() {
+    // if (window.ethereum) {
+    //   window.web3 = new Web3(window.ethereum);
+    //   await window.ethereum.enable();
+    //   const web3 = window.web3;
+    //   const metaMaskAccount = await web3.eth.getAccounts();
+    //   setConnectedstatus(true);
+    //   let splitedMetaMaskAddress;
+    //   if (metaMaskAccount) {
+    //     splitedMetaMaskAddress =
+    //       metaMaskAccount[0].substring(0, 6) +
+    //       "......" +
+    //       metaMaskAccount[0].substring(
+    //         metaMaskAccount[0].length - 4,
+    //         metaMaskAccount[0].length
+    //       );
+    //   }
+    //   setConnectedAccount(splitedMetaMaskAddress);
+    // } else if (window.web3) {
+    //   window.web3 = new Web3(window.web3.currentProvider);
+    // } else {
+    //   window.alert(
+    //     "Non-Ethereum browser detected. You should consider trying MetaMask!"
+    //   );
+    // }
+  }
   return (
     <div className="container-fluid navBar">
       <div className="row">
@@ -70,7 +96,7 @@ const Navbar = ({ connectedAccount, setConnectedAccount }) => {
                     <a href="#Buynft"
                     className={`nav-link connect `}
                     onClick={
-                      connectWallet()
+                     connectWallet()
                     }
                     >
                     {connectedAccount}
