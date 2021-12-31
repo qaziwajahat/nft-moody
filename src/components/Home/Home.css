@@ -1,0 +1,15 @@
+.bg-main{
+    background-image: url(../../assests/mainback.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 880px;
+    width: auto;
+    margin: 0px;
+}
+/* .bg-home{
+    background-image: url(../../assests/bg-home.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 880px;
+    width: auto;
+} */

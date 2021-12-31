@@ -1,0 +1,156 @@
+import gif from "../../assests/egif.gif"
+import { React, useState } from "react";
+
+import "./Mint.css"
+const Mint = ({ connecctstatus, setConnectedstatus }) => {
+    const { REACT_APP_CONTRACT_ADDRESS } = process.env;
+  const [connectedAccount, setConnectedAccount] = useState("CONNECT");
+  const [contract, setContract] = useState(null);
+  const [tokenId, setTokenId] = useState(null);
+  const [supply, setTokenSupply] = useState(null);
+  const [price, setPrice] = useState();
+  const [priceInEth, setPriceInEth] = useState(0.05);
+  const [quantity, setQuantity] = useState(1);
+  const [minted, setMinted] = useState(false);
+  console.log("C", connecctstatus);
+    return (
+        <>
+            <div className="container-fluid bg-mint ">
+                <div className="row">
+                    <div className="col-md-6 gif-col">
+                        <img className="gif" src={gif} alt=" Box" />
+                    </div>
+                     <div className="col-md-6 gif-col ">
+                        <div className="row">
+
+                        
+                        <div className="col-md-10 btngroup ">
+                            <h1 className="mint-heading">2500 UNIQUE REAL ESTATE NFTs</h1>
+
+                            <hr
+                                style={{
+                                    color: "red",
+                                    height: 2,
+                                    padding: "0.rem",
+                                    margin: "0.3rem",
+                                    background: "red",
+                                }}
+                            />
+                            <div className="row">
+                                <div className="col-md-4">
+                                    <h4 style={{ color: "white" }}>Price</h4>
+                                </div>
+                                <div className="col-md-4 ">
+                                    <h3 className="mint-mid">-</h3>
+                                </div>
+                                <div className="col-md-4 mx-auto">
+                                    <h4 style={{ color: "white" }} className="float-right">0.1ETH</h4>
+                                </div>
+                            </div>
+                            <hr
+                                style={{
+                                    color: "red",
+                                    height: 2,
+                                    padding: "0.rem",
+                                    margin: "0.3rem",
+                                    background: "red",
+                                }}
+                            />
+
+                            <div className="row">
+                                <div className="col-md-4">
+                                    <h4 style={{ color: "white" }}>Quantity</h4>
+                                </div>
+                                <div className="col-md-4">
+                                    <div
+                                        className="d-flex rounded btngroup justify-content-center"
+                                        role="group"
+                                        aria-label="First group"
+                                    >
+                                        <button
+                                            type="button"
+                                            className="btn bg-black text-white fw-bold btn-size "
+                                            onClick={() => {
+                                                if (quantity > 1) {
+                                                    setQuantity(quantity - 1);
+                                                }
+                                            }}
+                                        >
+                                            -
+                                        </button>
+                                        <button type="button" className="btn text-white btn-size">
+                                            {quantity}
+                                        </button>
+                                        <button
+                                            type="button"
+                                            className="btn bg-black fw-bold text-white btn-size"
+                                            onClick={() => {
+                                                if (quantity < 5) {
+                                                    setQuantity(quantity + 1);
+                                                }
+                                            }}
+                                        >
+                                            +
+                                        </button>
+                                    </div>
+                                </div>
+                                <div className="col-md-4 ">
+                                    <button className="nav-btn-nav float-right">MAX</button>
+                                </div>
+                            </div>
+                            <hr
+                                style={{
+                                    color: "red",
+                                    height: 2,
+                                    padding: "0.rem",
+                                    margin: "0.3rem",
+                                    background: "red",
+                                }}
+                            />
+                            <div className="row">
+                                <div className="col-md-4">
+                                    <h4 style={{ color: "white" }}>Total</h4>
+                                </div>
+                                <div className="col-md-4">
+                                    <h3 className="mint-mid">-</h3>
+                                </div>
+                                <div className="col-md-4 mx-auto">
+                                    <h4 style={{ color: "white" }} className="float-right">2500</h4>
+                                </div>
+                            </div>
+                            <hr
+                                style={{
+                                    color: "red",
+                                    height: 2,
+                                    padding: "0.rem",
+                                    margin: "0.3rem",
+                                    background: "red",
+                                }}
+                            />
+
+                            <p className="text-center py-5">
+                                <button href="#Buynft"
+                                    className="btn connect-btn  mint-btn"
+                                    // onClick={async () => {
+                                    //     await connectWallet();
+                                    //     await mint();
+                                    // }}
+                                >
+                                    Mint Now
+                                </button>
+
+                                <br />
+                                <span className="spanNFT">{supply} / 2500</span>
+                            </p>
+                        </div>
+                        </div>
+                    </div> 
+
+                </div>
+
+            </div>
+        </>
+    )
+}
+
+export default Mint;

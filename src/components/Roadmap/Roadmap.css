@@ -1,0 +1,13 @@
+.heading-back-pic{
+    /* background-image: url(../../assests/connect.png); */
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 250px;
+    font-size: 20px;
+    font-weight: bolder;
+    height: 40px;
+
+}
+.bg-main{
+    background-color: #b58d2e;
+}
