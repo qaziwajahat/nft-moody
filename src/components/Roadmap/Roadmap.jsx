@@ -1,15 +1,26 @@
-const Roadmap =()=>{
-    return(
+import "./Roadmap.css"
+const Roadmap = () => {
+    return (
         <>
-        <div className="container-fluid bg-main">
-            <div className="col-md-12">
-                <div className="heading-back-pic">
-                    <h1>
-                    Lorem ipsum dolor sit.
-                    </h1>
+            <div className="container-fluid bg-m">
+                <div className="row">
+                    <div className="col-md-4">
+
+                    </div>
+
+                    <div className="col-md-4 ">
+                        <div className="heading-back-pic">
+                            <h1 className="road-heading">
+                                Lorem ipsum dolor sit.
+                            </h1>
+                        </div>
+                    </div>
+                    <div className="col-md-4">
+
+</div>
                 </div>
-            </div>              
-        </div>
+
+            </div>
         </>
     )
 }

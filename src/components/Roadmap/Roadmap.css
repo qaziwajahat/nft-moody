@@ -1,13 +1,17 @@
 .heading-back-pic{
-    /* background-image: url(../../assests/connect.png); */
+    background-image: url(../../assests/connect.png);
     background-repeat: no-repeat;
-    background-size: contain;
-    width: 250px;
-    font-size: 20px;
-    font-weight: bolder;
-    height: 40px;
+    background-size: cover;
+    width: 500px;
+    height: 80px;
 
 }
-.bg-main{
+.bg-m{
     background-color: #b58d2e;
+}
+.road-heading{
+    color: white;
+    text-align: center;
+    padding:20px ;
+    font-weight: bold;
 }

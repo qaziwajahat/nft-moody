@@ -8,7 +8,7 @@ function App() {
       <Navbar />
       <Home/>
       <Mint/>
-      {/* <Roadmap/> */}
+      <Roadmap/>
     </>
   );
 }
