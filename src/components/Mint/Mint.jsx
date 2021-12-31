@@ -1,10 +1,9 @@
 import gif from "../../assests/egif.gif"
 import { React, useState } from "react";
-
+import web3 from "web3"
 import "./Mint.css"
-const Mint = ({ connecctstatus, setConnectedstatus }) => {
+const Mint = ({ connecctstatus, setConnectedstatus,  connectedAccount, setConnectedAccount }) => {
     const { REACT_APP_CONTRACT_ADDRESS } = process.env;
-  const [connectedAccount, setConnectedAccount] = useState("CONNECT");
   const [contract, setContract] = useState(null);
   const [tokenId, setTokenId] = useState(null);
   const [supply, setTokenSupply] = useState(null);
@@ -13,9 +12,36 @@ const Mint = ({ connecctstatus, setConnectedstatus }) => {
   const [quantity, setQuantity] = useState(1);
   const [minted, setMinted] = useState(false);
   console.log("C", connecctstatus);
+
+  async function connectWallet() {
+    if (window.ethereum) {
+      window.web3 = new Web3(window.ethereum);
+      await window.ethereum.enable();
+      const web3 = window.web3;
+      const metaMaskAccount = await web3.eth.getAccounts();
+      setConnectedstatus(true);
+      let splitedMetaMaskAddress;
+      if (metaMaskAccount) {
+        splitedMetaMaskAddress =
+          metaMaskAccount[0].substring(0, 6) +
+          "......" +
+          metaMaskAccount[0].substring(
+            metaMaskAccount[0].length - 4,
+            metaMaskAccount[0].length
+          );
+      }
+      setConnectedAccount(splitedMetaMaskAddress);
+    } else if (window.web3) {
+      window.web3 = new Web3(window.web3.currentProvider);
+    } else {
+      window.alert(
+        "Non-Ethereum browser detected. You should consider trying MetaMask!"
+      );
+    }
+  }
     return (
         <>
-            <div className="container-fluid bg-mint ">
+            <div id="Mint" className="container-fluid bg-mint">
                 <div className="row">
                     <div className="col-md-6 gif-col">
                         <img className="gif" src={gif} alt=" Box" />
@@ -25,15 +51,15 @@ const Mint = ({ connecctstatus, setConnectedstatus }) => {
 
                         
                         <div className="col-md-10 btngroup ">
-                            <h1 className="mint-heading">2500 UNIQUE REAL ESTATE NFTs</h1>
+                            <h1 className="mint-heading"> 9900 Moody Dumboz</h1>
 
                             <hr
                                 style={{
-                                    color: "red",
+                                    color: "black",
                                     height: 2,
                                     padding: "0.rem",
                                     margin: "0.3rem",
-                                    background: "red",
+                                    background: "black",
                                 }}
                             />
                             <div className="row">
@@ -44,16 +70,16 @@ const Mint = ({ connecctstatus, setConnectedstatus }) => {
                                     <h3 className="mint-mid">-</h3>
                                 </div>
                                 <div className="col-md-4 mx-auto">
-                                    <h4 style={{ color: "white" }} className="float-right">0.1ETH</h4>
+                                    <h4 style={{ color: "white" }} className="float-right">0.07ETH</h4>
                                 </div>
                             </div>
                             <hr
                                 style={{
-                                    color: "red",
+                                    color: "black",
                                     height: 2,
                                     padding: "0.rem",
                                     margin: "0.3rem",
-                                    background: "red",
+                                    background: "black",
                                 }}
                             />
 
@@ -100,11 +126,11 @@ const Mint = ({ connecctstatus, setConnectedstatus }) => {
                             </div>
                             <hr
                                 style={{
-                                    color: "red",
+                                    color: "black",
                                     height: 2,
                                     padding: "0.rem",
                                     margin: "0.3rem",
-                                    background: "red",
+                                    background: "black",
                                 }}
                             />
                             <div className="row">
@@ -115,16 +141,16 @@ const Mint = ({ connecctstatus, setConnectedstatus }) => {
                                     <h3 className="mint-mid">-</h3>
                                 </div>
                                 <div className="col-md-4 mx-auto">
-                                    <h4 style={{ color: "white" }} className="float-right">2500</h4>
+                                    <h4 style={{ color: "white" }} className="float-right">9900</h4>
                                 </div>
                             </div>
                             <hr
                                 style={{
-                                    color: "red",
+                                    color: "black",
                                     height: 2,
                                     padding: "0.rem",
                                     margin: "0.3rem",
-                                    background: "red",
+                                    background: "black",
                                 }}
                             />
 
@@ -140,7 +166,7 @@ const Mint = ({ connecctstatus, setConnectedstatus }) => {
                                 </button>
 
                                 <br />
-                                <span className="spanNFT">{supply} / 2500</span>
+                                <span className="spanNFT">{supply} / 9900</span>
                             </p>
                         </div>
                         </div>

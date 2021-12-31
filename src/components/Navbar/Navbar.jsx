@@ -5,7 +5,7 @@ import t from "../../assests/twiter.png"
 import o from "../../assests/opensea.png"
 
 
-const Navbar = () => {
+const Navbar = ({ connectedAccount, setConnectedAccount }) => {
   return (
     <div className="container-fluid navBar">
       <div className="row">
@@ -37,20 +37,20 @@ const Navbar = () => {
                     </a>
                   </li>
                   <li className="nav-item bg-link">
-                    <a href="#About" className={`nav-link navLink `}>
-                      ABOUT
+                    <a href="#Mint" className={`nav-link navLink `}>
+                      Mint
                     </a>
                   </li>
                   <li className="nav-item bg-link">
-                    <a href="#Roadmap" className={`nav-link navLink `}>
-                      ROADMAP
+                    <a href="#Join" className={`nav-link navLink `}>
+                      Join
                     </a>
                   </li>
-                  <li className="nav-item bg-link">
+                  {/* <li className="nav-item bg-link">
                     <a href="#Team" className={`nav-link navLink `}>
                       TEAM
                     </a>
-                  </li>
+                  </li> */}
                   <li className="nav-item  ">
                     <a href="#Buynft" className={`nav-link  `}>
                       <img  className="bg-social" src={discord} alt="No Pic" />
@@ -67,8 +67,13 @@ const Navbar = () => {
                     </a>
                   </li>
                   <li className="nav-item  ">
-                    <a href="#Buynft" className={`nav-link connect `}>
-                      Connect Wallet
+                    <a href="#Buynft"
+                    className={`nav-link connect `}
+                    onClick={
+                      connectWallet()
+                    }
+                    >
+                    {connectedAccount}
                     
                     </a>
                   </li>
